@@ -19,7 +19,7 @@ const command = {
     exec(client, message, args, args1) {
         return __awaiter(this, void 0, void 0, function* () {
             // return message.reply(`Please invite me with ${process.env.INVITE_LINK}`)
-            yield (0, embeds_1.reply)(message, yield (0, embeds_1.createThumbnailEmbed)(`Invite me to your server!\n[Invite](${process.env.INVITE_LINK})`, process.env.MAIN_EMBED_COLOUR, process.env.GOOD_ORANGE, message.author));
+            yield (0, embeds_1.reply)(message, yield (0, embeds_1.createThumbnailEmbed)(`[Invite](${process.env.INVITE_LINK}) me to your server!`, process.env.MAIN_EMBED_COLOR, process.env.GOOD_ORANGE, message.author));
         });
     }
 };

@@ -18,8 +18,8 @@ const command: ICommand = {
         await reply(
             message,
             await createThumbnailEmbed(
-                `Invite me to your server!\n[Invite](${process.env.INVITE_LINK})`,
-                process.env.MAIN_EMBED_COLOUR as ColorResolvable,
+                `[Invite](${process.env.INVITE_LINK}) me to your server!`,
+                process.env.MAIN_EMBED_COLOR as ColorResolvable,
                 process.env.GOOD_ORANGE as string,
                 message.author
             )
