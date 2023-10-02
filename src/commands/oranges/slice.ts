@@ -35,6 +35,12 @@ const command: ICommand = {
         const timeNow = await getTime()
         const timeDif = timeNow - server.lastSlice
 
+        console.log(
+            server.cooldown * 60,
+            timeDif,
+            isCooldown[message.guildId as string]
+        )
+
         if (
             server.cooldown * 60 <= timeDif &&
             !isCooldown[message.guildId as string]

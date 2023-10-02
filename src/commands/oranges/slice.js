@@ -40,6 +40,7 @@ const command = {
             const server = utils_1.OrangeUtils.Servers[message.guildId];
             const timeNow = yield getTime();
             const timeDif = timeNow - server.lastSlice;
+            console.log(timeDif, server.cooldown);
             if (server.cooldown * 60 <= timeDif &&
                 !isCooldown[message.guildId]) {
                 isCooldown[message.guildId] = true;
