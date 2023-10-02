@@ -26,7 +26,6 @@ const command = {
             let max = 10;
             if (args[0] && !Number.isNaN(args[0]))
                 max = Math.min(Number(args[0]), 25);
-            console.log(max);
             var arr = [];
             for (var _slice in slices) {
                 arr.push(slices[_slice]);
