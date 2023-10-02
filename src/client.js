@@ -1,4 +1,4 @@
-const { OrangeUtils } = require('./src/modules/utils')
+const { OrangeUtils } = require('./modules/utils')
 const { Client, GatewayIntentBits, Partials } = require('discord.js')
 const { default: Logger, LogLevel } = require('betterjslogger')
 
@@ -31,12 +31,8 @@ client.on('guildDelete', OrangeUtils.RemoveServer)
 async function start() {
     new OrangeUtils('./config.yaml')
 
-    await require('./src/modules/tasks').load(
-        client,
-        logger,
-        process.env.taskDir
-    )
-    await require('./src/modules/commands').load(
+    await require('./modules/tasks').load(client, logger, process.env.taskDir)
+    await require('./modules/commands').load(
         client,
         logger,
         process.env.commandDir
