@@ -38,11 +38,12 @@ const command: ICommand = {
         console.log(
             server.cooldown * 60,
             timeDif,
+            server.cooldown * 60 <= timeDif,
             isCooldown[message.guildId as string]
         )
 
         if (
-            server.cooldown * 60 <= timeDif &&
+            server.cooldown * 60 <= timeDif ||
             !isCooldown[message.guildId as string]
         ) {
             isCooldown[message.guildId as string] = true
