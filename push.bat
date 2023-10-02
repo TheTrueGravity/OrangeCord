@@ -1,0 +1,1 @@
+npm run build && git add * && git commit -m "main" && git push -u origin main
