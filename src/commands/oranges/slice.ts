@@ -1,6 +1,10 @@
 import { Client, ColorResolvable, ImageURLOptions, Message } from 'discord.js'
 import ICommand, { AuthLevel } from '../../interfaces/ICommand'
-import { reply, createThumbnailEmbed } from '../../modules/embeds'
+import {
+    reply,
+    createThumbnailEmbed,
+    createErrorEmbed
+} from '../../modules/embeds'
 import { OrangeUtils } from '../../modules/utils'
 
 async function getTime() {
@@ -67,13 +71,12 @@ const command: ICommand = {
 
         await reply(
             message,
-            await createThumbnailEmbed(
+            await createErrorEmbed(
                 `<@${message.author.id}>, please wait ${await formatRemaining(
                     Math.abs(server.cooldown * 60 - timeDif)
                 )}!`,
-                process.env.MAIN_EMBED_COLOR as ColorResolvable,
-                process.env.BAD_ORANGE as string,
-                message.author
+                message.author,
+                process.env.BAD_ORANGE as string
             )
         )
     }

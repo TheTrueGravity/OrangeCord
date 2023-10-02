@@ -51,7 +51,7 @@ const command = {
                 yield (0, embeds_1.reply)(message, yield (0, embeds_1.createThumbnailEmbed)(`<@${message.author.id}>, Here, have a slice, you now have ${utils_1.OrangeUtils.Slices[message.guildId][message.author.id].slices} slices!`, process.env.MAIN_EMBED_COLOR, process.env.GOOD_ORANGE, message.author));
                 return;
             }
-            yield (0, embeds_1.reply)(message, yield (0, embeds_1.createThumbnailEmbed)(`<@${message.author.id}>, please wait ${yield formatRemaining(Math.abs(server.cooldown * 60 - timeDif))}!`, process.env.MAIN_EMBED_COLOR, process.env.BAD_ORANGE, message.author));
+            yield (0, embeds_1.reply)(message, yield (0, embeds_1.createErrorEmbed)(`<@${message.author.id}>, please wait ${yield formatRemaining(Math.abs(server.cooldown * 60 - timeDif))}!`, message.author, process.env.BAD_ORANGE));
         });
     }
 };

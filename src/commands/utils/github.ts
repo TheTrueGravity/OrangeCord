@@ -17,7 +17,7 @@ const command: ICommand = {
         await reply(
             message,
             await createThumbnailEmbed(
-                `Check out the public [GitHub](${process.env.GITHUB_LINK})`,
+                `Check out the public [GitHub](${process.env.GITHUB_LINK})!`,
                 process.env.MAIN_EMBED_COLOR as ColorResolvable,
                 process.env.GOOD_ORANGE as string,
                 message.author
