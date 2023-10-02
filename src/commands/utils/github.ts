@@ -3,7 +3,7 @@ import ICommand from '../../interfaces/ICommand'
 import { reply, createThumbnailEmbed } from '../../modules/embeds'
 
 const command: ICommand = {
-    name: 'git',
+    name: 'github',
     category: 'utils',
     description: 'Gives the github repo link, please submit issues here!',
     aliases: ['git'],
@@ -19,7 +19,7 @@ const command: ICommand = {
             message,
             await createThumbnailEmbed(
                 `Check out the public github!\n[GitHub](${process.env.GITHUB_LINK})`,
-                process.env.MAIN_EMBED_COLOUR as ColorResolvable,
+                process.env.MAIN_EMBED_COLOR as ColorResolvable,
                 process.env.GOOD_ORANGE as string,
                 message.author
             )

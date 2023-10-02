@@ -11,7 +11,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 Object.defineProperty(exports, "__esModule", { value: true });
 const embeds_1 = require("../../modules/embeds");
 const command = {
-    name: 'git',
+    name: 'github',
     category: 'utils',
     description: 'Gives the github repo link, please submit issues here!',
     aliases: ['git'],
@@ -19,7 +19,7 @@ const command = {
     exec(client, message, args, args1) {
         return __awaiter(this, void 0, void 0, function* () {
             // return message.reply(`Please invite me with ${process.env.INVITE_LINK}`)
-            yield (0, embeds_1.reply)(message, yield (0, embeds_1.createThumbnailEmbed)(`Check out the public github!\n[GitHub](${process.env.GITHUB_LINK})`, process.env.MAIN_EMBED_COLOUR, process.env.GOOD_ORANGE, message.author));
+            yield (0, embeds_1.reply)(message, yield (0, embeds_1.createThumbnailEmbed)(`Check out the public github!\n[GitHub](${process.env.GITHUB_LINK})`, process.env.MAIN_EMBED_COLOR, process.env.GOOD_ORANGE, message.author));
         });
     }
 };
