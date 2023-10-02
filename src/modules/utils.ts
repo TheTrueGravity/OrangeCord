@@ -138,7 +138,7 @@ export class OrangeUtils {
 
     private static readFile(): IOrangeData {
         if (!fs.existsSync(this.dataPath)) {
-            fs.writeFileSync(this.dataPath, '')
+            fs.writeFileSync(this.dataPath, 'servers:')
         }
         const data = yaml.load(
             fs.readFileSync(this.dataPath).toString()

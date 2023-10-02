@@ -104,7 +104,7 @@ class OrangeUtils {
     }
     static readFile() {
         if (!fs.existsSync(this.dataPath)) {
-            fs.writeFileSync(this.dataPath, '');
+            fs.writeFileSync(this.dataPath, 'servers:');
         }
         const data = yaml.load(fs.readFileSync(this.dataPath).toString());
         if (!data['servers']) {
