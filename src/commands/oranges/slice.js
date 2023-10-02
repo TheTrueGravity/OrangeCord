@@ -43,13 +43,13 @@ const command = {
             console.log(message.guildId, server.cooldown * 60, timeDif, server.cooldown * 60 <= timeDif, isCooldown[message.guildId]);
             if (server.cooldown * 60 <= timeDif &&
                 !isCooldown[message.guildId]) {
+                server.lastSlice = timeNow;
                 isCooldown[message.guildId] = true;
                 setTimeout(() => {
                     delete isCooldown[message.guildId];
                 }, 2000);
                 utils_1.OrangeUtils.AddSlice(message.guildId, message.author);
                 yield (0, embeds_1.reply)(message, yield (0, embeds_1.createThumbnailEmbed)(`<@${message.author.id}>, Here, have a slice, you now have ${utils_1.OrangeUtils.Slices[message.guildId][message.author.id].slices} slices!`, process.env.MAIN_EMBED_COLOR, process.env.GOOD_ORANGE, message.author));
-                server.lastSlice = timeNow;
                 return;
             }
             yield (0, embeds_1.reply)(message, yield (0, embeds_1.createThumbnailEmbed)(`<@${message.author.id}>, please wait ${yield formatRemaining(Math.abs(server.cooldown * 60 - timeDif))}!`, process.env.MAIN_EMBED_COLOR, process.env.BAD_ORANGE, message.author));

@@ -47,6 +47,7 @@ const command: ICommand = {
             server.cooldown * 60 <= timeDif &&
             !isCooldown[message.guildId as string]
         ) {
+            server.lastSlice = timeNow
             isCooldown[message.guildId as string] = true
             setTimeout(() => {
                 delete isCooldown[message.guildId as string]
@@ -69,7 +70,6 @@ const command: ICommand = {
                     message.author
                 )
             )
-            server.lastSlice = timeNow
             return
         }
 
