@@ -2,6 +2,7 @@ const { OrangeUtils } = require('./modules/utils')
 const { Client, GatewayIntentBits, Partials } = require('discord.js')
 const { default: Logger, LogLevel } = require('betterjslogger')
 
+require('dotenv').config()
 const logger = new Logger({
     logFolder: './logs',
     logToFile: true
