@@ -7,7 +7,7 @@ const command: ICommand = {
     category: 'admin',
     description: 'List all the moderator roles (needed for mod permissions)!',
     aliases: [],
-    args: ['roleID | role tag | role name'],
+    args: [],
     async exec(
         client: Client,
         message: Message,
@@ -32,7 +32,8 @@ const command: ICommand = {
             out += `${role?.name} (${role?.id})\n`
         })
 
-        message.reply(out)
+        // await message.reply(out)
+        message.reply(out === '' ? 'No mod roles currently set!' : out)
     }
 }
 

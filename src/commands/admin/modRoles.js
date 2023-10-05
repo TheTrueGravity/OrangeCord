@@ -15,7 +15,7 @@ const command = {
     category: 'admin',
     description: 'List all the moderator roles (needed for mod permissions)!',
     aliases: [],
-    args: ['roleID | role tag | role name'],
+    args: [],
     exec(client, message, args, args1) {
         return __awaiter(this, void 0, void 0, function* () {
             const modRoleIDs = utils_1.OrangeUtils.Servers[message.guildId].modRoles;
@@ -33,7 +33,8 @@ const command = {
             modRoles.forEach((role) => {
                 out += `${role === null || role === void 0 ? void 0 : role.name} (${role === null || role === void 0 ? void 0 : role.id})\n`;
             });
-            message.reply(out);
+            // await message.reply(out)
+            message.reply(out === '' ? 'No mod roles currently set!' : out);
         });
     }
 };
