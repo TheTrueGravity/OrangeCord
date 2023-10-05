@@ -36,9 +36,12 @@ const command: ICommand = {
             index = Number(index)
             if (index >= max) break
             const slice = arr[index]
-            description += `<@${slice.id}> (${slice.displayName}) #${
-                index + 1
-            } has ${slice.slices} slices!\n`
+            // description += `<@${slice.id}> (${slice.displayName}) #${
+            //     index + 1
+            // } has ${slice.slices} slices!\n`
+            description += `#${index + 1} - <@${slice.id}> (${
+                slice.displayName
+            }) - ${slice.slices} slices!\n`
         }
 
         await reply(

@@ -38,7 +38,10 @@ const command = {
                 if (index >= max)
                     break;
                 const slice = arr[index];
-                description += `<@${slice.id}> (${slice.displayName}) #${index + 1} has ${slice.slices} slices!\n`;
+                // description += `<@${slice.id}> (${slice.displayName}) #${
+                //     index + 1
+                // } has ${slice.slices} slices!\n`
+                description += `#${index + 1} - <@${slice.id}> (${slice.displayName}) - ${slice.slices} slices!\n`;
             }
             yield (0, embeds_1.reply)(message, yield (0, embeds_1.createThumbnailEmbed)(description, process.env.MAIN_EMBED_COLOR, process.env.GOOD_ORANGE, message.author));
             return;
