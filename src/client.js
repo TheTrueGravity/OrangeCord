@@ -44,7 +44,7 @@ async function start() {
 
 start()
 
-process.on('beforeExit', (code) => {
+process.on('exit', (code) => {
     logger.log(LogLevel.DEBUG, `Script exiting with code ${code}.`)
     OrangeUtils.writeFile()
 })
