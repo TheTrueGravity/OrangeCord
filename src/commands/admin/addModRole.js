@@ -40,18 +40,18 @@ const command = {
                         role = _role;
                 });
                 if (!role) {
-                    message.reply(`Invalid role "${args[0]}"`);
+                    message.reply(`Invalid role "${args1}"`);
                     return;
                 }
                 id = role.id;
             }
             let role;
             (_b = message.guild) === null || _b === void 0 ? void 0 : _b.roles.cache.forEach((_role) => {
-                if (_role.name == id)
+                if (_role.id == id)
                     role = _role;
             });
             if (!role) {
-                message.reply(`Invalid role "${args[0]}"`);
+                message.reply(`Invalid role "${args1}"`);
                 return;
             }
             if (utils_1.OrangeUtils.Servers[message.guildId].modRoles.includes(id)) {

@@ -32,7 +32,7 @@ const command: ICommand = {
                 if (_role.name == args1) role = _role
             })
             if (!role) {
-                message.reply(`Invalid role "${args[0]}"`)
+                message.reply(`Invalid role "${args1}"`)
                 return
             }
             id = role.id
@@ -40,10 +40,10 @@ const command: ICommand = {
 
         let role: Role | undefined
         message.guild?.roles.cache.forEach((_role) => {
-            if (_role.name == id) role = _role
+            if (_role.id == id) role = _role
         })
         if (!role) {
-            message.reply(`Invalid role "${args[0]}"`)
+            message.reply(`Invalid role "${args1}"`)
             return
         }
 
