@@ -9,7 +9,7 @@ const command: ICommand = {
     description: 'Set the cooldown in minutes!',
     args: ['ammountToShow (max 25, default 10)'],
     aliases: ['lb'],
-    authLevel: AuthLevel.owner,
+    authLevel: AuthLevel.member,
     async exec(
         client: Client,
         message: Message,

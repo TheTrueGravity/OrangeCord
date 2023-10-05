@@ -18,7 +18,7 @@ const command = {
     description: 'Set the cooldown in minutes!',
     args: ['ammountToShow (max 25, default 10)'],
     aliases: ['lb'],
-    authLevel: ICommand_1.AuthLevel.owner,
+    authLevel: ICommand_1.AuthLevel.member,
     exec(client, message, args, args1) {
         return __awaiter(this, void 0, void 0, function* () {
             const server = utils_1.OrangeUtils.Servers[message.guildId];
