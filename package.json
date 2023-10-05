@@ -1,6 +1,6 @@
 {
     "dependencies": {
-        "./": "^0.8.2",
+        "ascii-table3": "^0.8.2",
         "betterjslogger": "^1.0.2",
         "discord.js": "^14.13.0",
         "dotenv": "^16.3.1",
