@@ -37,7 +37,8 @@ const command: ICommand = {
             // Username
             let user: GuildMember | undefined
             message.guild?.members.cache.forEach((member) => {
-                if (member.displayName == args[0]) user = member
+                if (member.displayName.toLowerCase() == args[0].toLowerCase())
+                    user = member
             })
             if (!user) {
                 message.reply(`Invalid username "${args[0]}"`)

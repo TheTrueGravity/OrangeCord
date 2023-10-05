@@ -39,7 +39,7 @@ const command = {
                 // Username
                 let user;
                 (_a = message.guild) === null || _a === void 0 ? void 0 : _a.members.cache.forEach((member) => {
-                    if (member.displayName == args[0])
+                    if (member.displayName.toLowerCase() == args[0].toLowerCase())
                         user = member;
                 });
                 if (!user) {
