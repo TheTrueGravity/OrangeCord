@@ -40,7 +40,7 @@ const command = {
                 const dm = yield user.createDM();
                 if (shareChosen) {
                     const userList = users.map((user) => user.displayName);
-                    userList.filter((_user) => (_user = user.displayName));
+                    userList.filter((_user) => _user !== user.displayName);
                     let last;
                     if (userList.length > 1) {
                         last = userList.pop();
