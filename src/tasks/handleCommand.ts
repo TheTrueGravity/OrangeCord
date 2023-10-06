@@ -18,18 +18,29 @@ const Task: ITask = {
 
         var serverData = OrangeUtils.Servers[message.guild?.id.toString()]
 
-        var hasPrefix = false
         var prefix = ''
+        var hasPrefix = false
 
-        for (const _prefix of (
-            serverData.prefix +
-            ',' +
-            OrangeUtils.DefaultPrefix
-        ).split(',')) {
-            if (message.content.toLowerCase().startsWith(_prefix)) {
+        if (process.env.CUSTOM_PREFIX) {
+            if (
+                message.content
+                    .toLowerCase()
+                    .startsWith(process.env.CUSTOM_PREFIX)
+            ) {
                 hasPrefix = true
-                prefix = _prefix
-                break
+                prefix = process.env.CUSTOM_PREFIX
+            }
+        } else {
+            for (const _prefix of (
+                serverData.prefix +
+                ',' +
+                OrangeUtils.DefaultPrefix
+            ).split(',')) {
+                if (message.content.toLowerCase().startsWith(_prefix)) {
+                    hasPrefix = true
+                    prefix = _prefix
+                    break
+                }
             }
         }
 

@@ -26,15 +26,25 @@ const Task = {
         if (!message.guild)
             return;
         var serverData = utils_1.OrangeUtils.Servers[(_a = message.guild) === null || _a === void 0 ? void 0 : _a.id.toString()];
-        var hasPrefix = false;
         var prefix = '';
-        for (const _prefix of (serverData.prefix +
-            ',' +
-            utils_1.OrangeUtils.DefaultPrefix).split(',')) {
-            if (message.content.toLowerCase().startsWith(_prefix)) {
+        var hasPrefix = false;
+        if (process.env.CUSTOM_PREFIX) {
+            if (message.content
+                .toLowerCase()
+                .startsWith(process.env.CUSTOM_PREFIX)) {
                 hasPrefix = true;
-                prefix = _prefix;
-                break;
+                prefix = process.env.CUSTOM_PREFIX;
+            }
+        }
+        else {
+            for (const _prefix of (serverData.prefix +
+                ',' +
+                utils_1.OrangeUtils.DefaultPrefix).split(',')) {
+                if (message.content.toLowerCase().startsWith(_prefix)) {
+                    hasPrefix = true;
+                    prefix = _prefix;
+                    break;
+                }
             }
         }
         if (!hasPrefix)
